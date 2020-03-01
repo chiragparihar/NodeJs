@@ -1,0 +1,33 @@
+
+html
+	head
+		
+		
+	
+body
+	div#head_div
+		a(href = "/index.html" style={"white-space": "nowrap"}) Home 
+		a(href = "/order" style={ "padding": "14px 25px"}) Order
+		a(href = "/stats" style={"white-space": "nowrap"}) Stats
+		
+	div#main_div
+		h1 welcome to the stats page! <br><br>	
+	div(class = column first style={"float":"left" , "width": "30%"})#first
+		h1 restaurant:
+		each res in orders
+			li #{res.name}
+		
+	div(class = column second style={"float":"left" , "width": "20%"})#second
+		h1 # orders:
+		each res in orders
+			li #{res.number}
+	div(class = column third style={"float":"left" , "width": "20%"})#third
+		h1 Average:
+		each res in orders
+			li #{res.total/res.number}
+	div(class = column fourth style={"float":"left" , "width": "30%"})#fourth
+		h1 Most popular:
+		each res in orders
+			li #{res.popular}
+	
+		
